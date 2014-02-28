@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login for cohab.me</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+         <input type="submit" value="Signup" />
+    </form>
+</body>
+</html>

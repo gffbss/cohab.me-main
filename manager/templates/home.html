@@ -1,0 +1,67 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico'  %}">
+    <title>cohab.me</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cover.css' %}">
+
+</head>
+<body>
+   <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <img id = "title" class="img-responsive" data-src="static/img/main.png" alt="cohab.me" src="static/img/main.png">
+
+<!--            <h3 class="masthead-brand">cohab.me</h3>
+ -->              <ul class="nav masthead-nav">
+                <!-- <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Contact</a></li> -->
+              </ul>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">Welcome to your habitat, simplified.</h1>
+            <p class="lead">We want to help you with the little things, so you can get back to the big things. Like Netflix on friday nights or drinking too much at your company happy hour. Cohab will help you beautifully organize your habitat. </p><p class="lead">We are currently in beta testing, if you are interested in helping out, feel free to email below.</p>
+            <p class="lead">
+                  <a href="mailto:gboss4@gmail.com" class="btn btn-lg btn-default">Beta Testing</a>
+<!--               <a href="profile.html" class="btn btn-lg btn-default">Sign In</a>
+ -->            </p>
+
+              <form method="POST">
+                {% csrf_token %}
+                {{ sign_up_form }}
+                <input type="submit" value="Sign Up" />
+
+
+              </form>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>cohab.me</a>, by <a href="https://twitter.com/jovanki">@jovanki</a> <a href="https://twitter.com/hollowaykj">@hollowaykj</a> <a href="https://twitter.com/northdacoder">@northdacoder</a> <a href="https://twitter.com/gffbss">@gffbss</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/docs.min.js' %}"></script>
+</body>
+</html>
