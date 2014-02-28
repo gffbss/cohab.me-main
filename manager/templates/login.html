@@ -1,13 +1,68 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Login for cohab.me</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 </head>
 <body>
-    <form method="post">
-        {% csrf_token %}
-        {{ form }}
-         <input type="submit" value="Signup" />
+    <div class="container">
+    <h1>Please Sign Up</h1>
+         <form role="form" method="post">
+        <div class="form-group">
+            {% csrf_token %}
+            <label for="id_{{ user }}">{{ user }}</label>
+            {% for user in form.user_name %}
+            <input type="name" class="form-control" id="exampleInputName" placeholder="Enter user Name" >
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            <label for="id_{{ email }}">{{ email }}</label>
+            {% for email in form.email %}
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Email Address">
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <label for="id_{{ password }}">{{ password }}</label>
+            {% for password in form.password %}
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            <input type="file" id="exampleInputFile">
+            <p class="help-block">Upload your profile picture.</p>
+         </div>
+        <button type="submit" class="btn btn-default">Sign Up</button>
     </form>
+
+    </div>
+
+
+{#<form role="form" method="post">#}
+{#  <div class="form-group">#}
+{#    <label for="exampleInputEmail1">Email address</label>#}
+{#    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="{{ form.user_name }}">#}
+{#  </div>#}
+{#  <div class="form-group">#}
+{#    <label for="exampleInputPassword1">Password</label>#}
+{#    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">#}
+{#  </div>#}
+{#  <div class="form-group">#}
+{#    <label for="exampleInputFile">File input</label>#}
+{#    <input type="file" id="exampleInputFile">#}
+{#    <p class="help-block">Example block-level help text here.</p>#}
+{#  </div>#}
+{#  <div class="checkbox">#}
+{#    <label>#}
+{#      <input type="checkbox"> Check me out#}
+{#    </label>#}
+{#  </div>#}
+{#  <button type="submit" class="btn btn-default">Submit</button>#}
+{#</form>#}
+
 </body>
 </html>
