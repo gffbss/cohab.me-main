@@ -32,12 +32,6 @@
           </button>
           <a class="navbar-brand" href="profile.html"><img id = "title" class="img-responsive" data-src="{% static 'img/nav-title.png' %}" alt="cohab.me" src="{% static 'img/nav-title.png' %}"></a>        </div>
         <div class="navbar-collapse collapse">
-          <!-- <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
-          </ul> -->
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Find Something...">
           </form>
@@ -63,8 +57,9 @@
           <h2 class="sub-header">Items List</h2>
           <div class="well">
             <ul id = "listList">
-
-
+            	{% for user in users %}
+            		<div class="col-xs-6 col-sm-3 placeholder">
+            			<img class="img-responsive" alt="200x200" src="{{user.profile_pic_url}}">
             </ul>
 
           </div>
